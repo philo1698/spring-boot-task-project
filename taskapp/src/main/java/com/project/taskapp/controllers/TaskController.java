@@ -27,7 +27,7 @@ public class TaskController {
     /**
      * 2) Delete task
      */
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     public String deleteTask(@RequestBody Long id) {
         taskService.deleteTask(id);
         return "Task deleted successfully";
@@ -36,7 +36,7 @@ public class TaskController {
     /**
      * 3-6) Update fields using body
      */
-    @PostMapping("/update/{id}")
+    @PatchMapping("/update/{id}")
     public Task updateTaskFields(@PathVariable Long id,
                                  @RequestBody TaskUpdateRequest request) {
 
@@ -62,7 +62,7 @@ public class TaskController {
     /**
      * 7) Update whole task (except ID)
      */
-    @PostMapping("/update-full/{id}")
+    @PutMapping("/update-full/{id}")
     public Task updateFullTask(@PathVariable Long id,
                                @RequestBody Task task) {
         return taskService.updateTask(id, task);
@@ -71,7 +71,7 @@ public class TaskController {
     /**
      * 8) Get task by ID
      */
-    @PostMapping("/get")
+    @GetMapping("/get")
     public Task getTask(@RequestBody Long id) {
         return taskService.getTaskById(id);
     }
@@ -87,7 +87,7 @@ public class TaskController {
     /**
      * 10) Get tasks by list of IDs
      */
-    @PostMapping("/list")
+    @GetMapping("/list")
     public List<Task> getTasksByIds(@RequestBody IdListRequest request) {
         return taskService.getTasksByIds(request.getIds());
     }
