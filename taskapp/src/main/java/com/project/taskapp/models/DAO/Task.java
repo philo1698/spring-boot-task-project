@@ -8,7 +8,7 @@ import jakarta.persistence.*;
  * This class represents the Task entity (table in database)
  */
 @Entity // Marks this class as a JPA entity (table)
-@Table(name = "tasks") // Optional: specify table name
+@Table(name = "task") // Optional: specify table name
 public class Task {
     @Id // Marks this field as primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
