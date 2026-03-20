@@ -48,4 +48,14 @@ public class TaskController {
         return "task data";
     }
 
+    @GetMapping("/readAllTasks")
+    public String readalltask(){
+        return "all tasks data";
+    }
+
+    @GetMapping("/readTaskById")
+    public String readtaskbyid(){
+        return "needed tasks data";
+    }
+
 }
