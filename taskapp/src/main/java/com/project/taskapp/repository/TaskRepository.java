@@ -13,6 +13,13 @@ import java.util.List;
 @Repository // Marks this as Spring repository bean
 public interface TaskRepository extends JpaRepository<Task, Long> { //long is id data type (here id is called "id" and its data type is long
 
+    //JpaRepository<Task, Long> gives you :
+    // save() (create a row)
+    // findById() (find row by primary key of data)
+    // findAll() (get all rows)
+    // deleteById() (delete a certain row by its primary key)
+    // etc. (no need to implement manually)
+
     /**
      * Find tasks by assigned person
      * Spring automatically generates query
