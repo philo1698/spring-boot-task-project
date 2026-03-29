@@ -2,7 +2,7 @@ version: '3.9'
 services:
   mysql-db:
     image: mysql:8.0
-    container_name: mysql-db
+    container_name: task-db
     environment:
       MYSQL_DATABASE: task_manager
       MYSQL_USER: springuser
